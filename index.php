@@ -11,7 +11,7 @@ $product1->setName("Croccantini per cani");
 $product1->setImage("https://picsum.photos/seed/picsum/200/300");
 $product1->setDescription("Il tuo cane sarà felice come il padrone al gol di grosso in italia-germania del 2006");
 $product1->setPrice(19);
-$product1->setCategory("Cibo");
+$product1->setCategory("Gatti");
 
 echo $product1->getName() . "<br>";
 echo $product1->getImage() . "<br>";
