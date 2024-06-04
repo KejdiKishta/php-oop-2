@@ -42,3 +42,11 @@ $product2->setPackage("cardboard box");
 
 var_dump($product1);
 var_dump($product2);
+
+$errorPrice = "error";
+
+try {
+    $product1->setPrice($errorPrice);
+} catch (\Throwable $e) {
+    echo $e->getMessage();
+}
