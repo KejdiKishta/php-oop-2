@@ -32,4 +32,11 @@ $product1->setDescription("Il tuo cane sarà felice come te al gol di grosso in 
 $product1->setFlavor("Chocolate");
 $product1->category = $dogCategory;
 
+$product2 = new Toy("Set gomitoli di lana", 35.90, 2000);
+$product2->setImage("https://picsum.photos/seed/picsum/200/300");
+$product2->setDescription("Miao");
+$product2->setMaterial("Wool");
+$product2->category = $catCategory;
+
 var_dump($product1);
+var_dump($product2);
