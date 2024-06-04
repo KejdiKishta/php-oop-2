@@ -1,9 +1,13 @@
 <?php
 // importo product
 require_once __DIR__ . "/product.php";
+require_once __DIR__ . "/../trait/packaging.php";
 
 // copio la logica di product
 class Toy extends Product {
+    // trait
+    use Packaging;
+
     // aggiungo degli attributi oltre a quelli presenti in product
     private string $material;
     private int $gWeight;
