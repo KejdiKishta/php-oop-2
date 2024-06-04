@@ -31,14 +31,14 @@ $product1->setImage("https://picsum.photos/seed/picsum/200/300");
 $product1->setDescription("Il tuo cane sarà felice come te al gol di grosso in italia-germania del 2006");
 $product1->setFlavor("Chocolate");
 $product1->category = $dogCategory;
-$product1->setPackage(3000);
+$product1->setPackage("plastic");
 
 $product2 = new Toy("Set gomitoli di lana", 35.90, 2000);
 $product2->setImage("https://picsum.photos/seed/picsum/200/300");
 $product2->setDescription("Miao");
 $product2->setMaterial("Wool");
 $product2->category = $catCategory;
-$product2->setPackage(3000);
+$product2->setPackage("cardboard box");
 
 var_dump($product1);
 var_dump($product2);
