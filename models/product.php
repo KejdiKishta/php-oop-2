@@ -1,15 +1,20 @@
 <?php
-
+require_once __DIR__ . "/category.php";
 class Product {
     private string $name;
     private string $image;
     private string $description;
-    private int $price;
-    private string $category;
-    private array $acceptedCategories = ["Cani", "Gatti"];
+    private float $price;
+    // private string $category;
+    // private array $acceptedCategories = ["Cani", "Gatti"];
+    public Category $category;
     
-    // essendo un ecommerce devo poter modificare tutti i dati di qualsiasi articolo quindi uso set e get
-    
+    // construct
+    public function __construct(string $_name, float $_price) {
+        $this->name = $_name;
+        $this->price = $_price;
+    }
+
     // setter
 
     // name
@@ -33,21 +38,21 @@ class Product {
     }
 
     // category
-    public function setCategory(string $_category) {
-        $flag = false;
+    // public function setCategory(string $_category) {
+    //     $flag = false;
 
-        foreach ($this->acceptedCategories as $curCategory) {
-            if ($curCategory === $_category) {
-                $flag = true;
-            }
-        }
+    //     foreach ($this->acceptedCategories as $curCategory) {
+    //         if ($curCategory === $_category) {
+    //             $flag = true;
+    //         }
+    //     }
 
-        if ($flag === true) {
-            $this->category = $_category;
-        } else {
-            throw new Exception("Category is not accepted, look at the array 'acceptedCategories'!");
-        }
-    }
+    //     if ($flag === true) {
+    //         $this->category = $_category;
+    //     } else {
+    //         throw new Exception("Category is not accepted, look at the array 'acceptedCategories'!");
+    //     }
+    // }
 
     // getter
     public function getName() {
@@ -62,8 +67,8 @@ class Product {
     public function getPrice() {
         return $this->price;
     }
-    public function getCategory() {
-        return $this->category;
-    }
+    // public function getCategory() {
+    //     return $this->category;
+    // }
 
 }

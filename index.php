@@ -4,17 +4,23 @@
 //  - I prodotti saranno oltre al **cibo**, anche **giochi**, **cucce**, etc.
 // Stampiamo delle card contenenti i dettagli dei prodotti, come immagine, titolo, prezzo, icona della categoria ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia).
 
+require_once __DIR__ . "/models/category.php";
 require_once __DIR__ . "/models/product.php";
 
-$product1 = new Product;
-$product1->setName("Croccantini per cani");
-$product1->setImage("https://picsum.photos/seed/picsum/200/300");
-$product1->setDescription("Il tuo cane sarà felice come il padrone al gol di grosso in italia-germania del 2006");
-$product1->setPrice(19);
-$product1->setCategory("Gatti");
+// categorie presenti
+$catCategory = new Category("Cat");
+$catCategory->setIcon("fa-solid fa-cat");
 
-echo $product1->getName() . "<br>";
-echo $product1->getImage() . "<br>";
-echo $product1->getDescription() . "<br>";
-echo $product1->getPrice() . "<br>";
-echo $product1->getCategory() . "<br>";
+$dogCategory = new Category("Dog");
+$dogCategory->setIcon("fa-solid fa-dog");
+
+$birdCategory = new Category("Bird");
+$birdCategory->setIcon("fa-solid fa-crow");
+
+
+$product1 = new Product("Croccantini per cani", 24.99);
+$product1->setImage("https://picsum.photos/seed/picsum/200/300");
+$product1->setDescription("Il tuo cane sarà felice come te al gol di grosso in italia-germania del 2006");
+$product1->category = $dogCategory;
+
+var_dump($product1);
